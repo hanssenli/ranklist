@@ -1,0 +1,87 @@
+﻿body {
+}
+
+.outer {
+  display: block;
+  height: 250px;
+  margin: auto;
+  
+  position: relative;
+  left:0;
+  right: 0;
+  top: 0;
+  bottom: 0;  
+  
+  width: 800px;
+}
+
+#choice1 {
+  height: 300px;
+  text-align: center;
+  float:left;
+  background-color:#3498db;
+  width: 49%;
+  z-index: 1;
+  vertical-align: middle;
+  padding: 70px;
+  color: white;
+  -webkit-transition: all 100ms ease;
+  -moz-transition: all 100ms ease;
+  -ms-transition: all 100ms ease; 
+  -o-transition: all 100ms ease;
+  transition: all 100ms ease;
+  cursor:pointer;
+
+}
+#choice2 {
+  height: 300px;
+  background-color:white;
+  float:left;
+  text-align: center;
+  width: 49%;
+  z-index: 1;
+  vertical-align: middle;
+  padding: 70px;
+  color: #3498db;
+
+  -webkit-transition: all 100ms ease;
+  -moz-transition: all 100ms ease;
+  -ms-transition: all 100ms ease; 
+  -o-transition: all 100ms ease;
+  transition: all 100ms ease;
+  cursor:pointer;
+
+}
+#middle {
+  height: 300px;
+  text-align: justify;
+  float: left;
+  z-index: 1;
+  position: relative;
+  width: 2%;
+}
+
+.circleBase {
+    border-radius: 50px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: white;
+    left:50%;
+    top:150px; /* this is half of the height of the choice1/choice2 */
+    margin-left:-50px;
+    margin-top:-50px;
+    height: 250px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 80px;
+    background-color: #3498db;
+    color: white;
+}
+
+.type1 {
+    height:100px;
+    width: 100px;
+    z-index: 100;
+    position:absolute;
+
+}
