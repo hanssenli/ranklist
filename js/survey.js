@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+	
     /*
     if ($(".jumbotron").width() <= 600) {
         //alert();
