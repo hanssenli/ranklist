@@ -1,4 +1,6 @@
-﻿$(document).ready(function () {
+﻿
+
+$(document).ready(function () {
     /*
     if ($(".jumbotron").width() <= 600) {
         //alert();
@@ -112,13 +114,17 @@
         //$("#choice2").css("position", "relative");
 
     }
-
+    
+    //Logic for clicking on button
+  /*
     $('#submitToolTip').hide();
     $("#choice1").on("click", function () {
        
         $("#submitToolTip").fadeIn("400", function () {
             // Animation complete
             document.getElementById("MainContent_SubmitChoice1").click();
+            //$('#submitToolTip').hide();
+
         });
        
     });
@@ -129,7 +135,7 @@
             document.getElementById("MainContent_SubmitChoice2").click();
         });
     });
-
+*/
 
     $("#choice1").hover(function () { //mouse in
 
@@ -186,7 +192,7 @@
 
     
 
-});
+});//end function
 
 
 
