@@ -199,7 +199,19 @@
 
     });
 
+    //reveals Current rankings of players
+	$("#hide").click(function() {	
+		$("#list").hide();
+		//sortRank()
+		//alert(rankArray[1].name)
+	});
     
+	$("#show").click(function() {
+		sortRank()
+		//alert(rankArray[0].name)
+		document.getElementById("list").innerHTML = displayRank();
+		$("#list").show();
+	})
 
 });
 

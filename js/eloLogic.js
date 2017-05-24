@@ -4,10 +4,7 @@
 
 //$(document).ready(function() {
 
-
-	//var choiceArray = ["Djokovic", "Tsonga", "Federer", "Nadal", "Murray", "Roddick", "Sampras", "Agassi", "Del Potro", "Wawrinka"];
-	
-	
+	//Input array that all the updating methods use
 	var choiceArray = new Array(4);
 	
 	choiceArray[0] = {name: "Roger Federer", elo: 1000};
@@ -15,12 +12,15 @@
 	choiceArray[2] = {name: "Novak Djokovic", elo: 1000};
 	choiceArray[3] = {name: "Andy Murray", elo: 1000};
 	
+	//Displayed array that holds the rank of each player based on their elo
+	//their position is their index +1. sortRank() is the method that sorts the array by elo
+	var rankArray = choiceArray;
 	//document.getElementById("choice1").innerHTML = choiceArray[0].name;
 	
 	function updateButtons(i, j) {
 		document.getElementById("choice1").innerHTML = choiceArray[i].name + " " + choiceArray[i].elo;
 		document.getElementById("choice2").innerHTML = choiceArray[j].name + " " + choiceArray[j].elo;
-	};
+	}
 	
 	
 	//Math for the elo ranking system. Description of mathematical formula found on wikipedia page for elo system.
@@ -38,7 +38,7 @@
 			choiceArray[i].elo = choiceArray[i].elo + (kFactor * (1 - estimWinElo));
 			choiceArray[j].elo = choiceArray[j].elo + (kFactor * (0 - estimLosElo));
 			
-	};
+	}
 	
 	
 	//Random pair selector. Selects two integers >=0 and < choiceArray.length.
@@ -60,6 +60,36 @@
 		 return result;
 	}
 	
+	
+	//Sorts rankArray in order using insertion sort. Puts the highest elo at index 0.
+	function sortRank() {
+
+		var temp;
+		
+		for (var i = 1; i < rankArray.length; i++) {
+			var j = i;
+			while (j > 0 && rankArray[j-1].elo < rankArray[j].elo) {
+				temp = rankArray[j];
+				rankArray[j] = rankArray[j-1];
+				rankArray[j-1] = temp;
+				
+				j--;
+				
+			}//end while
+		}//end for	
+	}
+	
+	function displayRank() {
+		var listString = "";
+		var rank;
+		
+		for (var i = 0; i < rankArray.length; i++) {
+			rank = i+1;
+			listString = listString + rank + " " + rankArray[i].name + " " + rankArray[i].elo + ", ";
+		}
+		
+		return listString;
+	}
 	
 	/*
 	//First comparison loop
