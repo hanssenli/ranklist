@@ -24,7 +24,8 @@
 	
 	
 	//Math for the elo ranking system. Description of mathematical formula found on wikipedia page for elo system.
-	//Parameters are winner index (i), loser index (j).  
+	//Parameters are winner index (i), loser index (j).
+	//Added Math.floor to create integer rankings
 	function updateRank(i, j) {
 
 			var estimWinElo, estimLosElo;
@@ -35,8 +36,8 @@
 			estimLosElo = 1/(1+Math.pow(10, (choiceArray[i].elo - choiceArray[j].elo)/400));
 			//alert("estimLosElo " + estimLosElo)
 			
-			choiceArray[i].elo = choiceArray[i].elo + (kFactor * (1 - estimWinElo));
-			choiceArray[j].elo = choiceArray[j].elo + (kFactor * (0 - estimLosElo));
+			choiceArray[i].elo = Math.floor(choiceArray[i].elo + (kFactor * (1 - estimWinElo)));
+			choiceArray[j].elo = Math.floor(choiceArray[j].elo + (kFactor * (0 - estimLosElo)));
 			
 	}
 	
@@ -85,7 +86,7 @@
 		
 		for (var i = 0; i < rankArray.length; i++) {
 			rank = i+1;
-			listString = listString + rank + " " + rankArray[i].name + " " + rankArray[i].elo + ", ";
+			listString = listString + rank + " " + rankArray[i].name + " " + rankArray[i].elo + "<br>";
 		}
 		
 		return listString;

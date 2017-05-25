@@ -119,6 +119,8 @@
     //selectPair returns an object with two integers labeled left and right
     var test = selectPair();
     updateButtons(test.left, test.right)
+    sortRank()
+    document.getElementById("list").innerHTML = displayRank();
     
     
     $('#submitToolTip').hide();
@@ -126,7 +128,9 @@
        
         $("#submitToolTip").fadeIn("400", function () {
         	updateRank(test.left, test.right)
-        	test = selectPair(); 
+        	sortRank()
+        	document.getElementById("list").innerHTML = displayRank();
+        	test = selectPair();
         	updateButtons(test.left, test.right)
         	//document.getElementById("choice1").innerHTML = "new strings";
             // Animation complete
@@ -138,6 +142,8 @@
     $("#choice2").on("click", function () {
         $("#submitToolTip").fadeIn("400", function () {
         	updateRank(test.right, test.left)
+        	sortRank()
+        	document.getElementById("list").innerHTML = displayRank();
         	test = selectPair();
         	updateButtons(test.left, test.right)
             // Animation complete
@@ -207,9 +213,9 @@
 	});
     
 	$("#show").click(function() {
-		sortRank()
+		//sortRank()
 		//alert(rankArray[0].name)
-		document.getElementById("list").innerHTML = displayRank();
+		//document.getElementById("list").innerHTML = displayRank();
 		$("#list").show();
 	})
 
